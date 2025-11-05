@@ -1,0 +1,32 @@
+const brands = ["Bosch", "Indesit", "Atlant", "Samsung", "LG", "Whirlpool", "Electrolux", "Ariston", "Candy", "Zanussi", "Midea", "Haier", "Gorenje", "Beko", "Toshiba"];
+const types = ["Стиральная машина", "Холодильник", "Духовой шкаф", "Посудомоечная машина", "Вытяжка", "Сушильная машина"];
+const statuses = ["В наличии", "Ожидается", "Куплено"];
+
+const prefixes = {
+  "Стиральная машина": ["WAT", "IWC", "WS", "WW", "F", "EWF"],
+  "Холодильник": ["KGN", "DF", "RB", "GN", "C", "RF"],
+  "Духовой шкаф": ["HBG", "EOF", "FO", "BO", "HBA"],
+  "Посудомоечная машина": ["SMS", "LDF", "DW", "ZDF"],
+  "Вытяжка": ["DHF", "CFM", "HFC", "ZV"],
+  "Сушильная машина": ["WT", "TD", "DV", "EDV"]
+};
+
+const db = [];
+for (let i = 1; i <= 30000; i++) {
+  const type = types[Math.floor(Math.random() * types.length)];
+  const brand = brands[Math.floor(Math.random() * brands.length)];
+  const prefix = prefixes[type][Math.floor(Math.random() * prefixes[type].length)];
+  const model = `${brand} ${prefix}${Math.floor(1000 + Math.random() * 90000)}`;
+  const status = statuses[Math.floor(Math.random() * statuses.length)];
+  
+  db.push({
+    id: i,
+    name: model,
+    brand: brand,
+    type: type,
+    partStatus: status,
+    category: "Техника"
+  });
+}
+
+console.log(JSON.stringify(db));
