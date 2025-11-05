@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Fixa Pro Premium</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#1a73e8" />
+</head>
+<body>
+  <header>
+    <h1>Fixa Pro</h1>
+    <div class="header-actions">
+      <button id="langBtn">🇷🇺</button>
+      <button id="themeBtn">☀️</button>
+    </div>
+  </header>
+
+  <div class="stats">Техника: <span id="countTech">0</span> | Здоровье: <span id="countHealth">0</span></div>
+
+  <div class="tabs">
+    <button class="tab active" data-tab="main">Основное</button>
+    <button class="tab" data-tab="parts">Запчасти</button>
+    <button class="tab" data-tab="health">Здоровье</button>
+  </div>
+
+  <input type="text" id="search" placeholder="Поиск техники..." />
+
+  <main id="content">
+    <!-- Контент будет подгружаться здесь -->
+  </main>
+
+  <footer>
+    <button id="addBtn">🔧 Добавить технику</button>
+    <button id="healthBtn">❤️ Здоровье семьи</button>
+    <button id="exportPdf">📄 Экспорт в PDF</button>
+    <button id="exportJson">💾 Экспорт в JSON</button>
+    <button id="importJson">📥 Импорт из JSON</button>
+    <button id="printBtn">🖨️ Печать</button>
+    <button id="scanQr">📷 Сканировать QR</button>
+  </footer>
+
+  <input type="file" id="importInput" accept=".json" hidden />
+
+  <script src="database.json"></script>
+  <script src="script.js"></script>
+</body>
+</html>
